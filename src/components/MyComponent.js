@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script'
 import PageBanner6 from './BannerSection/PageBanner6';
 
 const MyComponent = () => {
@@ -11,7 +12,8 @@ const MyComponent = () => {
         <title></title>
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
-        <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+     
+     <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" />
         <script>
           {`
             document.documentElement.className = "js";
