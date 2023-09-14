@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Script from 'next/script'
+
 import PageBanner6 from './BannerSection/PageBanner6';
 
 const MyComponent = () => {
@@ -13,8 +13,8 @@ const MyComponent = () => {
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
      
-     <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" />
-        <Script>
+     <script sync src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" />
+        <script>
           {`
             document.documentElement.className = "js";
             var supportsCssVars = function () {
@@ -27,7 +27,7 @@ const MyComponent = () => {
             };
             supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
           `}
-        </Script>
+        </script>
       </Head>
      
       <>
@@ -352,11 +352,11 @@ const MyComponent = () => {
     </div>
   </div>
 </>
- <Script src="js/imagesloaded.pkgd.min.js" />
-   <Script src="js/charming.min.js" />
-     <Script src="js/TweenMax.min.js" />
-     <Script src="js/draggabilly.pkgd.min.js" />
-         <Script src="js/demo.js" />
+ <script sync src="js/imagesloaded.pkgd.min.js" />
+   <script sync src="js/charming.min.js" />
+     <script sync src="js/TweenMax.min.js" />
+     <script sync src="js/draggabilly.pkgd.min.js" />
+         <script sync src="js/demo.js" />
 
     </>
   );
