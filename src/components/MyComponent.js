@@ -8,7 +8,7 @@ const MyComponent = () => {
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title></title>
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
         <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
@@ -352,11 +352,11 @@ const MyComponent = () => {
 </>
 
   
-      <script  src="js/imagesloaded.pkgd.min.js"></script>
-      <script  src="js/charming.min.js"></script>
-      <script  src="js/TweenMax.min.js"></script>
-      <script  src="js/draggabilly.pkgd.min.js"></script>
-      <script  src="js/demo.js"></script>
+      <script async  src="js/imagesloaded.pkgd.min.js"></script>
+      <script async src="js/charming.min.js"></script>
+      <script async src="js/TweenMax.min.js"></script>
+      <script async src="js/draggabilly.pkgd.min.js"></script>
+      <script async src="js/demo.js"></script>
     </>
   );
 }
