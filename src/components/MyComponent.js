@@ -14,7 +14,7 @@ const MyComponent = () => {
         <link rel="stylesheet" type="text/css" href="css/base.css" />
      
      <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" />
-        <script>
+        <Script>
           {`
             document.documentElement.className = "js";
             var supportsCssVars = function () {
@@ -27,7 +27,7 @@ const MyComponent = () => {
             };
             supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
           `}
-        </script>
+        </Script>
       </Head>
      
       <>
@@ -352,13 +352,12 @@ const MyComponent = () => {
     </div>
   </div>
 </>
+ <Script src="js/imagesloaded.pkgd.min.js" />
+   <Script src="js/charming.min.js" />
+     <Script src="js/TweenMax.min.js" />
+     <Script src="js/draggabilly.pkgd.min.js" />
+         <Script src="js/demo.js" />
 
-  
-      <script async  src="js/imagesloaded.pkgd.min.js"></script>
-      <script async src="js/charming.min.js"></script>
-      <script async src="js/TweenMax.min.js"></script>
-      <script async src="js/draggabilly.pkgd.min.js"></script>
-      <script async src="js/demo.js"></script>
     </>
   );
 }
