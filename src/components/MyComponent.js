@@ -12,7 +12,7 @@ const MyComponent = () => {
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
      
-     <script sync src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+     <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
           {`
             document.documentElement.className = "js";
@@ -351,11 +351,11 @@ const MyComponent = () => {
     </div>
   </div>
 </>
-   <script sync src="js/imagesloaded.pkgd.min.js"></script>
-      <script sync src="js/charming.min.js"></script>
-      <script sync src="js/TweenMax.min.js"></script>
-      <script sync src="js/draggabilly.pkgd.min.js"></script>
-      <script sync src="js/demo.js"></script>
+   <script async src="js/imagesloaded.pkgd.min.js"></script>
+      <script async src="js/charming.min.js"></script>
+      <script async src="js/TweenMax.min.js"></script>
+      <script async src="js/draggabilly.pkgd.min.js"></script>
+      <script async src="js/demo.js"></script>
 
     </>
   );
