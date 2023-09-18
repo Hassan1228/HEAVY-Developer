@@ -350,14 +350,14 @@ const MyComponent = () => {
       <div className="cursor__side cursor__side--right" />
     </div>
   </div>
-          <Script src="js/imagesloaded.pkgd.min.js" />
+     
+</>
+    
+     <Script src="js/imagesloaded.pkgd.min.js" />
         <Script src="js/charming.min.js" />
         <Script src="js/charming.min.js" />
         <Script src="js/draggabilly.pkgd.min.js" />
         <Script src="js/demo.js" />
-</>
-    
-
 
 
 
