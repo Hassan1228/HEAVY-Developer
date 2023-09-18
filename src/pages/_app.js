@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import ContextProvider from "@/context/ContextProvider";
 import "@/vendors/animate.css";
 import "@/vendors/custom-animate.css";
@@ -31,7 +30,7 @@ const MyApp = ({ Component, pageProps }) => {
     <ContextProvider>
 <CustomCursor/>
       <Component {...pageProps}  /> \
-     <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" />
+
     </ContextProvider>
 
   );
