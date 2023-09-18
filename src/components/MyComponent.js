@@ -353,11 +353,11 @@ const MyComponent = () => {
         }}
       />
       <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async />
-      <script src="js/imagesloaded.pkgd.min.js" defer />
-      <script src="js/charming.min.js" defer />
-      <script src="js/TweenMax.min.js" defer />
-      <script src="js/draggabilly.pkgd.min.js" defer />
-      <script src="js/demo.js" defer />
+      <script src="js/imagesloaded.pkgd.min.js"  async />
+      <script src="js/charming.min.js"  async />
+      <script src="js/TweenMax.min.js"  async />
+      <script src="js/draggabilly.pkgd.min.js"  async />
+      <script src="js/demo.js"  async />
 
     </>
   );
