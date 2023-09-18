@@ -8,7 +8,7 @@ class MyDocument extends Document {
     // Run the React rendering logic synchronously
     ctx.renderPage = () =>
       originalRenderPage({
-        // Useful for wrapping the whole react tree
+        // Useful for wrapping the whole react tree 
         enhanceApp: (App) => App,
         // Useful for wrapping in a per-page basis
         enhanceComponent: (Component) => Component,
