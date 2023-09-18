@@ -30,7 +30,6 @@ const MyApp = ({ Component, pageProps }) => {
     <ContextProvider>
 <CustomCursor/>
       <Component {...pageProps}  /> \
-
     </ContextProvider>
 
   );
