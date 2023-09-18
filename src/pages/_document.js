@@ -76,7 +76,9 @@ class MyDocument extends Document {
        
           
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-              
+         
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+  
        
         </Head>
         <body>
