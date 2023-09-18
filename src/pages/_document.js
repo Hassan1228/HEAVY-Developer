@@ -76,11 +76,11 @@ class MyDocument extends Document {
        
           
           <script async src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-                    <script src="js/imagesloaded.pkgd.min.js"></script>
-      <script src="js/charming.min.js"></script>
-      <script src="js/TweenMax.min.js"></script>
-      <script src="js/draggabilly.pkgd.min.js"></script>
-      <script src="js/demo.js"></script>
+                    <script async src="js/imagesloaded.pkgd.min.js"></script>
+      <script async src="js/charming.min.js"></script>
+      <script async src="js/TweenMax.min.js"></script>
+      <script async src="js/draggabilly.pkgd.min.js"></script>
+      <script async src="js/demo.js"></script>
        
         </Head>
         <body>
