@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script'
 import PageBanner6 from './BannerSection/PageBanner6';
 
 const MyComponent = () => {
@@ -336,8 +337,9 @@ const MyComponent = () => {
     </div>
   </div>
 </>
- <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-      <script>
+ <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
+      strategy="beforeInteractive"/>
+      <Script>
         {`
           document.documentElement.className = "js";
           var supportsCssVars = function () {
@@ -350,12 +352,22 @@ const MyComponent = () => {
           };
           supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
         `}
-      </script>
-      <script src="js/imagesloaded.pkgd.min.js"></script>
-      <script src="js/charming.min.js"></script>
-      <script src="js/TweenMax.min.js"></script>
-      <script src="js/draggabilly.pkgd.min.js"></script>
-      <script src="js/demo.js"></script>
+      </Script>
+      <Script src="js/imagesloaded.pkgd.min.js"
+          strategy="beforeInteractive"
+            />
+      <Script src="js/charming.min.js"
+              strategy="beforeInteractive"
+            />
+      <Script src="js/TweenMax.min.js"
+              strategy="beforeInteractive"
+            />
+      <Script src="js/draggabilly.pkgd.min.js"
+              strategy="beforeInteractive"
+            />
+      <Script src="js/demo.js"
+                  strategy="beforeInteractive"
+            />
 
     </>
   );
