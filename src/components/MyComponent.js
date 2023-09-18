@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import Script from 'next/script'; // Import Script from Next.js
 
 const MyComponent = () => {
   useEffect(() => {
@@ -17,6 +16,24 @@ const MyComponent = () => {
     if (!supportsCssVars()) {
       alert('Please view this demo in a modern browser that supports CSS Variables.');
     }
+
+    // Load other scripts
+    const scriptSources = [
+      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
+      'js/imagesloaded.pkgd.min.js',
+      'js/charming.min.js',
+      'js/TweenMax.min.js',
+      'js/draggabilly.pkgd.min.js',
+      'js/demo.js',
+    ];
+
+    scriptSources.forEach((src) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.onload = () => console.log(`Script ${src} has loaded`);
+      document.head.appendChild(script);
+    });
   }, []);
 
   return (
@@ -311,9 +328,9 @@ const MyComponent = () => {
           </svg>
         </button>
       </div>
-      {/* /grid-wrap */}
+
     </div>
-    {/* /page */}
+
     <div className="menu-wrap">
       <div className="menu-draggable" />
       <nav className="menu">
@@ -342,29 +359,16 @@ const MyComponent = () => {
     </div>
  
   </main>
+    
   <div className="cursor">
     <div className="cursor__inner cursor__inner--circle">
       <div className="cursor__side cursor__side--left" />
       <div className="cursor__side cursor__side--right" />
     </div>
   </div>
-
-      <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" strategy="beforeInteractive" />
-
-      <Script strategy="beforeInteractive">
-        {`
-          // Inline script content
-          document.documentElement.className = "js";
-        `}
-      </Script>
-
-      <Script src="js/imagesloaded.pkgd.min.js" strategy="beforeInteractive" />
-      <Script src="js/charming.min.js" strategy="beforeInteractive" />
-      <Script src="js/TweenMax.min.js" strategy="beforeInteractive" />
-      <Script src="js/draggabilly.pkgd.min.js" strategy="beforeInteractive" />
-      <Script src="js/demo.js" strategy="beforeInteractive" />
     </>
   );
 };
 
 export default MyComponent;
+
