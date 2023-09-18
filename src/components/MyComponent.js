@@ -1,8 +1,46 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
-import Script from 'next/script'
-import PageBanner6 from './BannerSection/PageBanner6';
+import Script from 'next/script'; // Import Script from Next.js
 
 const MyComponent = () => {
+  useEffect(() => {
+    // Inline script
+    const supportsCssVars = () => {
+      const style = document.createElement('style');
+      style.innerHTML = ':root { --tmp-var: bold; }';
+      document.head.appendChild(style);
+      const supportsVars = !!(window.CSS && window.CSS.supports && window.CSS.supports('font-weight', 'var(--tmp-var)'));
+      document.head.removeChild(style);
+      return supportsVars;
+    };
+
+    if (!supportsCssVars()) {
+      alert('Please view this demo in a modern browser that supports CSS Variables.');
+    }
+
+    // Load other scripts
+    const scriptSources = [
+      'js/imagesloaded.pkgd.min.js',
+      'js/charming.min.js',
+      'js/TweenMax.min.js',
+      'js/draggabilly.pkgd.min.js',
+      'js/demo.js',
+    ];
+
+    scriptSources.forEach((src) => {
+      // Use the Script component to load scripts with the correct strategy
+      // Make sure your script files are in the `public` directory.
+      return (
+        <Script
+          key={src}
+          src={src}
+          strategy="beforeInteractive"
+          onLoad={() => console.log(`Script ${src} has loaded`)}
+        />
+      );
+    });
+  }, []);
+
   return (
     <>
       <Head>
@@ -326,9 +364,9 @@ const MyComponent = () => {
           <a className="menu__item-explore">explore</a>
         </div>
       </nav>
-      {/*menu*/}
+   
     </div>
-    {/*/menu-wrap*/}
+ 
   </main>
   <div className="cursor">
     <div className="cursor__inner cursor__inner--circle">
@@ -336,41 +374,9 @@ const MyComponent = () => {
       <div className="cursor__side cursor__side--right" />
     </div>
   </div>
-</>
- <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"
-      strategy="beforeInteractive"/>
-      <Script>
-        {`
-          document.documentElement.className = "js";
-          var supportsCssVars = function () {
-            var e, t = document.createElement("style");
-            t.innerHTML = ":root { --tmp-var: bold; }";
-            document.head.appendChild(t);
-            e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
-            t.parentNode.removeChild(t);
-            return e;
-          };
-          supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-        `}
-      </Script>
-      <Script src="js/imagesloaded.pkgd.min.js"
-          strategy="beforeInteractive"
-            />
-      <Script src="js/charming.min.js"
-              strategy="beforeInteractive"
-            />
-      <Script src="js/TweenMax.min.js"
-              strategy="beforeInteractive"
-            />
-      <Script src="js/draggabilly.pkgd.min.js"
-              strategy="beforeInteractive"
-            />
-      <Script src="js/demo.js"
-                  strategy="beforeInteractive"
-            />
 
     </>
   );
-}
+};
 
 export default MyComponent;
