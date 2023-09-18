@@ -17,28 +17,6 @@ const MyComponent = () => {
     if (!supportsCssVars()) {
       alert('Please view this demo in a modern browser that supports CSS Variables.');
     }
-
-    // Load other scripts
-    const scriptSources = [
-      'js/imagesloaded.pkgd.min.js',
-      'js/charming.min.js',
-      'js/TweenMax.min.js',
-      'js/draggabilly.pkgd.min.js',
-      'js/demo.js',
-    ];
-
-    scriptSources.forEach((src) => {
-      // Use the Script component to load scripts with the correct strategy
-      // Make sure your script files are in the `public` directory.
-      return (
-        <Script
-          key={src}
-          src={src}
-          strategy="beforeInteractive"
-          onLoad={() => console.log(`Script ${src} has loaded`)}
-        />
-      );
-    });
   }, []);
 
   return (
@@ -50,13 +28,9 @@ const MyComponent = () => {
         <title>Portfolio</title>
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
-     
       </Head>
-     
-      <>
-   
 
-  <main>
+      <main>
    
     <div className="page page--preview">
       <div className="grid-wrap">
@@ -375,6 +349,20 @@ const MyComponent = () => {
     </div>
   </div>
 
+      <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" strategy="beforeInteractive" />
+
+      <Script strategy="beforeInteractive">
+        {`
+          // Inline script content
+          document.documentElement.className = "js";
+        `}
+      </Script>
+
+      <Script src="js/imagesloaded.pkgd.min.js" strategy="beforeInteractive" />
+      <Script src="js/charming.min.js" strategy="beforeInteractive" />
+      <Script src="js/TweenMax.min.js" strategy="beforeInteractive" />
+      <Script src="js/draggabilly.pkgd.min.js" strategy="beforeInteractive" />
+      <Script src="js/demo.js" strategy="beforeInteractive" />
     </>
   );
 };
