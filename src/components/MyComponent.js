@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import gsap from 'gsap'; // Import GSAP
 
 const MyComponent = () => {
   useEffect(() => {
@@ -34,6 +35,9 @@ const MyComponent = () => {
       script.onload = () => console.log(`Script ${src} has loaded`);
       document.head.appendChild(script);
     });
+
+    // GSAP Animation Example (fade-in animation)
+    gsap.from('.grid__item', { opacity: 0, duration: 1, stagger: 0.2 });
   }, []);
 
   return (
@@ -46,8 +50,7 @@ const MyComponent = () => {
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
       </Head>
-
-      <main>
+  <main>
    
     <div className="page page--preview">
       <div className="grid-wrap">
@@ -366,10 +369,10 @@ const MyComponent = () => {
       <div className="cursor__side cursor__side--right" />
     </div>
   </div>
-                
+           
+     
     </>
   );
 };
 
 export default MyComponent;
-
