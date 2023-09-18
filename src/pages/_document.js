@@ -24,6 +24,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+       <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
           <link
             rel="shortcut icon"
             href="favicon.ico"
