@@ -351,13 +351,15 @@ const MyComponent = () => {
     </div>
   </div>
 </>
- <script  src="js/imagesloaded.pkgd.min.js"></script>
-<script  src="js/charming.min.js"></script>
-<script src="js/TweenMax.min.js"></script>
-<script  src="js/draggabilly.pkgd.min.js"></script>
-<script src="js/demo.js"></script>
+ <script async src="js/imagesloaded.pkgd.min.js"></script>
+<script defer src="js/charming.min.js"></script>
+<script defer src="js/TweenMax.min.js"></script>
+<script defer src="js/draggabilly.pkgd.min.js"></script>
+<script defer src="js/demo.js"></script>
 
 
     </>
   );
 }
+
+export default MyComponent;
