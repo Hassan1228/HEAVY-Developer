@@ -85,7 +85,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-       <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"/>
+          <Script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"/>
 
         </body>
       </Html>
