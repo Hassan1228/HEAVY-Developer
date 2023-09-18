@@ -12,21 +12,6 @@ const MyComponent = () => {
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
      
-     <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        <script>
-          {`
-            document.documentElement.className = "js";
-            var supportsCssVars = function () {
-              var e, t = document.createElement("style");
-              t.innerHTML = "root: { --tmp-var: bold; }";
-              document.head.appendChild(t);
-              e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
-              t.parentNode.removeChild(t);
-              return e;
-            };
-            supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-          `}
-        </script>
       </Head>
      
       <>
@@ -351,12 +336,28 @@ const MyComponent = () => {
     </div>
   </div>
 </>
- <script async src="js/imagesloaded.pkgd.min.js"></script>
-<script defer src="js/charming.min.js"></script>
-<script defer src="js/TweenMax.min.js"></script>
-<script defer src="js/draggabilly.pkgd.min.js"></script>
-<script defer src="js/demo.js"></script>
-
+ <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            document.documentElement.className = "js";
+            var supportsCssVars = function () {
+              var e, t = document.createElement("style");
+              t.innerHTML = ":root { --tmp-var: bold; }";
+              document.head.appendChild(t);
+              e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+              t.parentNode.removeChild(t);
+              return e;
+            };
+            supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+          `,
+        }}
+      />
+      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async />
+      <script src="js/imagesloaded.pkgd.min.js" defer />
+      <script src="js/charming.min.js" defer />
+      <script src="js/TweenMax.min.js" defer />
+      <script src="js/draggabilly.pkgd.min.js" defer />
+      <script src="js/demo.js" defer />
 
     </>
   );
