@@ -1,7 +1,48 @@
 import Head from 'next/head';
+import { useEffect } from 'react'; // Import useEffect hook
 import PageBanner6 from './BannerSection/PageBanner6';
 
 const MyComponent = () => {
+useEffect(() => {
+    // Function to initialize the menu
+    const initMenu = () => {
+      // Place your menu initialization code here
+      // For example, you can add event listeners to make the menu work
+      const menuButton = document.querySelector('.menu-button');
+      const menu = document.querySelector('.menu');
+
+      menuButton.addEventListener('click', () => {
+        menu.classList.toggle('open');
+      });
+    };
+
+    // Add an event listener to ensure the DOM is fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if images and fonts are loaded
+      const imagesLoaded = () => {
+        // Implement your logic to check if images are loaded
+        // Example: Check if all images with a specific class are loaded
+        const imageElements = document.querySelectorAll('.grid__item img');
+        return [...imageElements].every((img) => img.complete);
+      };
+
+      const fontsLoaded = () => {
+        // Implement your logic to check if fonts are loaded
+        // Example: Check if a specific font is available
+        // You can use the 'WebFont' library if needed
+        return window.FontFace && window.FontFace.loaded;
+      };
+
+      // Check if both images and fonts are loaded
+      if (imagesLoaded() && fontsLoaded()) {
+        initMenu(); // Initialize the menu when everything is ready
+      } else {
+        // Retry initialization after a short delay if not everything is loaded
+        setTimeout(initMenu, 100);
+      }
+    });
+  }, []);
+
   return (
     <>
       <Head>
