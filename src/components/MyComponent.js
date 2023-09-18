@@ -350,15 +350,17 @@ const MyComponent = () => {
       <div className="cursor__side cursor__side--right" />
     </div>
   </div>
+          <Script src="js/imagesloaded.pkgd.min.js" />
+        <Script src="js/charming.min.js" />
+        <Script src="js/charming.min.js" />
+        <Script src="js/draggabilly.pkgd.min.js" />
+        <Script src="js/demo.js" />
 </>
- <script async src="js/imagesloaded.pkgd.min.js"></script>
-<script defer src="js/charming.min.js"></script>
-<script defer src="js/TweenMax.min.js"></script>
-<script defer src="js/draggabilly.pkgd.min.js"></script>
-<script defer src="js/demo.js"></script>
+    
 
 
-    </>
+
+
   );
 }
 
