@@ -1,48 +1,7 @@
 import Head from 'next/head';
-import { useEffect } from 'react'; // Import useEffect hook
 import PageBanner6 from './BannerSection/PageBanner6';
 
 const MyComponent = () => {
-useEffect(() => {
-    // Function to initialize the menu
-    const initMenu = () => {
-      // Place your menu initialization code here
-      // For example, you can add event listeners to make the menu work
-      const menuButton = document.querySelector('.menu-button');
-      const menu = document.querySelector('.menu');
-
-      menuButton.addEventListener('click', () => {
-        menu.classList.toggle('open');
-      });
-    };
-
-    // Add an event listener to ensure the DOM is fully loaded
-    document.addEventListener('DOMContentLoaded', () => {
-      // Check if images and fonts are loaded
-      const imagesLoaded = () => {
-        // Implement your logic to check if images are loaded
-        // Example: Check if all images with a specific class are loaded
-        const imageElements = document.querySelectorAll('.grid__item img');
-        return [...imageElements].every((img) => img.complete);
-      };
-
-      const fontsLoaded = () => {
-        // Implement your logic to check if fonts are loaded
-        // Example: Check if a specific font is available
-        // You can use the 'WebFont' library if needed
-        return window.FontFace && window.FontFace.loaded;
-      };
-
-      // Check if both images and fonts are loaded
-      if (imagesLoaded() && fontsLoaded()) {
-        initMenu(); // Initialize the menu when everything is ready
-      } else {
-        // Retry initialization after a short delay if not everything is loaded
-        setTimeout(initMenu, 100);
-      }
-    });
-  }, []);
-
   return (
     <>
       <Head>
@@ -377,28 +336,26 @@ useEffect(() => {
     </div>
   </div>
 </>
- <script
-        dangerouslySetInnerHTML={{
-          __html: `
-            document.documentElement.className = "js";
-            var supportsCssVars = function () {
-              var e, t = document.createElement("style");
-              t.innerHTML = ":root { --tmp-var: bold; }";
-              document.head.appendChild(t);
-              e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
-              t.parentNode.removeChild(t);
-              return e;
-            };
-            supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-          `,
-        }}
-      />
-      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" async />
-      <script src="js/imagesloaded.pkgd.min.js"  async />
-      <script src="js/charming.min.js"  async />
-      <script src="js/TweenMax.min.js"  async />
-      <script src="js/draggabilly.pkgd.min.js"  async />
-      <script src="js/demo.js"  async />
+ <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+      <script>
+        {`
+          document.documentElement.className = "js";
+          var supportsCssVars = function () {
+            var e, t = document.createElement("style");
+            t.innerHTML = ":root { --tmp-var: bold; }";
+            document.head.appendChild(t);
+            e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+            t.parentNode.removeChild(t);
+            return e;
+          };
+          supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+        `}
+      </script>
+      <script src="js/imagesloaded.pkgd.min.js"></script>
+      <script src="js/charming.min.js"></script>
+      <script src="js/TweenMax.min.js"></script>
+      <script src="js/draggabilly.pkgd.min.js"></script>
+      <script src="js/demo.js"></script>
 
     </>
   );
