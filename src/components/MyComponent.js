@@ -11,9 +11,28 @@ const MyComponent = () => {
         <title>Portfolio</title>
         <link rel="stylesheet" href="https://use.typekit.net/crf4rue.css" />
         <link rel="stylesheet" type="text/css" href="css/base.css" />
+     
+     <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+        <script>
+          {`
+            document.documentElement.className = "js";
+            var supportsCssVars = function () {
+              var e, t = document.createElement("style");
+              t.innerHTML = "root: { --tmp-var: bold; }";
+              document.head.appendChild(t);
+              e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+              t.parentNode.removeChild(t);
+              return e;
+            };
+            supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+          `}
+        </script>
       </Head>
+     
+      <>
+   
 
-    <main>
+  <main>
    
     <div className="page page--preview">
       <div className="grid-wrap">
@@ -325,27 +344,20 @@ const MyComponent = () => {
     </div>
     {/*/menu-wrap*/}
   </main>
+  <div className="cursor">
+    <div className="cursor__inner cursor__inner--circle">
+      <div className="cursor__side cursor__side--left" />
+      <div className="cursor__side cursor__side--right" />
+    </div>
+  </div>
+</>
+ <script  src="js/imagesloaded.pkgd.min.js"></script>
+<script  src="js/charming.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script  src="js/draggabilly.pkgd.min.js"></script>
+<script src="js/demo.js"></script>
 
-      {/* Include other scripts as needed */}
-      <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-      <script>
-        {`
-          document.documentElement.className = "js";
-          var supportsCssVars = function () {
-            var e, t = document.createElement("style");
-            t.innerHTML = ":root { --tmp-var: bold; }";
-            document.head.appendChild(t);
-            e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
-            t.parentNode.removeChild(t);
-            return e;
-          };
-          supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
-        `}
-      </script>
 
     </>
   );
 }
-
-export default MyComponent;
-
