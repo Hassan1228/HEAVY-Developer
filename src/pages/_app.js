@@ -5,7 +5,7 @@ import "@/vendors/flaticon.css";
 import "@/vendors/fontawesome-all.css";
 import "@/vendors/home.css";
 import "@/vendors/base.css";
-import Head from 'next/head';
+
 import "@/vendors/linoor-icons.css";
 import "@/vendors/reey-font.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -27,9 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
   
   return (
      <Head>
-        {/* Load your external scripts and styles here */}
-        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-        {/* ... (other scripts) ... */}
+    
       </Head>
     <ContextProvider>
 <CustomCursor/>
