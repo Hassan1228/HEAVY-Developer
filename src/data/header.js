@@ -114,7 +114,7 @@ const navItems = [
   },  {
     id: 7,
     name: "How it Works",
-    href: "//how-it-works",
+    href: "/how-it-works",
     subNavItems: [
     
 
@@ -123,7 +123,7 @@ const navItems = [
   {
     id: 4,
     name: "FAQs",
-    href: "//faqs",
+    href: "/faqs",
     subNavItems: [
     
 
