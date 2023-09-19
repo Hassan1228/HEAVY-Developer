@@ -26,9 +26,7 @@ import CustomCursor from "@/components/CustomCursor";
 const MyApp = ({ Component, pageProps }) => {
   
   return (
-     <Head>
-    
-      </Head>
+
     <ContextProvider>
 <CustomCursor/>
       <Component {...pageProps}  /> \
