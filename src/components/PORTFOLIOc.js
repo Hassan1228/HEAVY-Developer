@@ -3,10 +3,9 @@ import headerData from "@/data/header";
 import { Image } from "react-bootstrap";
 import Link from 'next/link';
 import NavItem from './Header/NavItem';
-
-import FooterSeven from './MainFooter/FooterSeven';
 import PageBanner6 from './BannerSection/PageBanner6';
 import MyComponent from './MyComponent';
+import FooterSeven from './MainFooter/FooterSeven';
 
 
 const { navItems, } = headerData;
