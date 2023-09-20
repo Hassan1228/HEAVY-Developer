@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-
+import 'base.css'
 const MyComponent = () => {
   useEffect(() => {
     // Move browser-specific code to useEffect to avoid server-side execution
