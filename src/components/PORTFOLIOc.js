@@ -98,18 +98,19 @@ function PORTFOLIOc() {
                     <div className="hamburger">
                         <span />
                     </div>
-          <PageBanner6 title="Portfolio" />
+          
                     <div id="container">
-                 
+                 <PageBanner6 title="Portfolio" />
                  
                         <section >
      
                 
                         </section>
                   <MyComponent/>
+                        <FooterSeven/>
+                  
                         <section />
  
-                        <FooterSeven/>
                         <section />
                         <section />
                     </div>
