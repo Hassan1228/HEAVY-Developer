@@ -103,8 +103,9 @@ function PORTFOLIOc() {
                     <div id="container">
                  
                         <section >
- <MyComponent/>
+
                         </section>
+                   <MyComponent/>
                         <section />
 
                         <FooterSeven/>
