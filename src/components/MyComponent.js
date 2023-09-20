@@ -1,45 +1,21 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
-import Script from 'next/script'; // Import the Script component
-import gsap from 'gsap'; // Import GSAP
 
 const MyComponent = () => {
   useEffect(() => {
-    // Inline script
-    const supportsCssVars = () => {
-      const style = document.createElement('style');
-      style.innerHTML = ':root { --tmp-var: bold; }';
-      document.head.appendChild(style);
-      const supportsVars = !!(window.CSS && window.CSS.supports && window.CSS.supports('font-weight', 'var(--tmp-var)'));
-      document.head.removeChild(style);
-      return supportsVars;
+    // Move browser-specific code to useEffect to avoid server-side execution
+    document.documentElement.className = "js";
+    var supportsCssVars = function () {
+      var e, t = document.createElement("style");
+      t.innerHTML = "root: { --tmp-var: bold; }";
+      document.head.appendChild(t);
+      e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+      t.parentNode.removeChild(t);
+      return e;
     };
-
-    if (!supportsCssVars()) {
-      alert('Please view this demo in a modern browser that supports CSS Variables.');
-    }
-
-    // Load other scripts
-    const scriptSources = [
-      'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
-      'js/imagesloaded.pkgd.min.js',
-      'js/charming.min.js',
-      'js/TweenMax.min.js',
-      'js/draggabilly.pkgd.min.js',
-      'js/demo.js',
-    ];
-
-    scriptSources.forEach((src) => {
-      const script = document.createElement('script');
-      script.src = src;
-      script.async = true;
-      script.onload = () => console.log(`Script ${src} has loaded`);
-      document.head.appendChild(script);
-    });
-
-    // GSAP Animation Example (fade-in animation)
-    gsap.from('.grid__item', { opacity: 0, duration: 1, stagger: 0.2 });
+    supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
   }, []);
+
 
   return (
     <>
@@ -48,9 +24,9 @@ const MyComponent = () => {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
-    
-        <link rel="stylesheet" type="text/css" href="css/base.css" />
+   
       </Head>
+
       <main>
    
       <div className="page page--preview">
@@ -59,7 +35,7 @@ const MyComponent = () => {
             <div className="grid__item-wrap">
               <div
                 className="grid__item"
-                style={{ backgroundImage: "url(/img/1.jpg)" }}
+                style={{ backgroundImage: "url(img/1.jpg)" }}
               />
             </div>
             <div className="grid__item-wrap">
@@ -332,9 +308,9 @@ const MyComponent = () => {
             </svg>
           </button>
         </div>
-  
+        {/* /grid-wrap */}
       </div>
-  
+      {/* /page */}
       <div className="menu-wrap">
         <div className="menu-draggable" />
         <nav className="menu">
@@ -359,20 +335,42 @@ const MyComponent = () => {
             <a className="menu__item-explore">explore</a>
           </div>
         </nav>
-     
+        {/*menu*/}
       </div>
-   
+      {/*/menu-wrap*/}
     </main>
-      <div className="cursor">
-        <div className="cursor__inner cursor__inner--circle">
-          <div className="cursor__side cursor__side--left" />
-          <div className="cursor__side cursor__side--right" />
-        </div>
+    <div className="cursor">
+      <div className="cursor__inner cursor__inner--circle">
+        <div className="cursor__side cursor__side--left" />
+        <div className="cursor__side cursor__side--right" />
       </div>
-      {/* Include your script using the Script component */}
-      <Script src="/js/your-script-file.js" strategy="lazyOnload" />
+    </div>
+  
+
+      {/* JavaScript scripts */}
+      <script async src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+      <script>
+        {`
+          document.documentElement.className = "js";
+          var supportsCssVars = function () {
+            var e, t = document.createElement("style");
+            t.innerHTML = "root: { --tmp-var: bold; }";
+            document.head.appendChild(t);
+            e = !!(window.CSS && window.CSS.supports && window.CSS.supports("font-weight", "var(--tmp-var)"));
+            t.parentNode.removeChild(t);
+            return e;
+          };
+          supportsCssVars() || alert("Please view this demo in a modern browser that supports CSS Variables.");
+        `}
+      </script>
+      
+      <script async src="js/imagesloaded.pkgd.min.js"></script>
+      <script defer src="js/charming.min.js"></script>
+      <script defer src="js/TweenMax.min.js"></script>
+      <script defer src="js/draggabilly.pkgd.min.js"></script>
+      <script defer src="js/demo.js"></script>
     </>
   );
-};
+}
 
 export default MyComponent;
