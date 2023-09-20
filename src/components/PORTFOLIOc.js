@@ -101,8 +101,9 @@ function PORTFOLIOc() {
                     </div>
                     <PageBanner6 title="Portfolio" />
                     <div id="container">
+                     <MyComponent/>
                         <section >
-                              <MyComponent/>
+                           
                         </section>
             
                         <section />
