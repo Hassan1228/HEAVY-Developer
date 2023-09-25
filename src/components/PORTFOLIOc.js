@@ -100,18 +100,18 @@ function PORTFOLIOc() {
                     </div>
           
                     <div id="container">
-                 <PageBanner6 title="Portfolio" />
-                 
+              
                         <section >
-     
-                
+        <PageBanner6 title="Portfolio" />
+                 
                         </section>
-                  <MyComponent/>
-                        <FooterSeven/>
+            
+                       
                   
                         <section />
- 
+       <MyComponent/>
                         <section />
+                   <FooterSeven/>
                         <section />
                     </div>
                 </div>
